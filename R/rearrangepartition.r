@@ -26,17 +26,18 @@ rearrangepartition <- function(matrix, partition) {
   }
 
   # make sure block 1 is the smallest block
-  if (sum(partition) < length(partition) / 2) {
-    partition[partition = 1] <- 2
-    partition[partition = 0] <- 1
-    partition[partition = 2] <- 0
+  if (sum(partition) > length(partition) / 2) {
+    partition[partition == 1] <- 2
+    partition[partition == 0] <- 1
+    partition[partition == 2] <- 0
   }
 
-  block1 <- matrix[, partition = 1]
-  block2 <- matrix[, partition = 0]
+  block1 <- matrix[, partition == 1]
+  block2 <- matrix[, partition == 0]
 
   # rearrange block 1
-  matrix[, partition == 1] <- rearrange(block1, block2)
+  block1.ra <- rearrange(block1, block2)
+  matrix[, partition == 1] <- block1.ra
 
-  return(rearranged)
+  return(matrix)
 }

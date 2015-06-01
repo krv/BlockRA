@@ -29,7 +29,7 @@ rearrange <- function(block1, block2) {
   rank.target <- (block1.rows + 1) - rank.block2
   index.initial <- sort(block1.sums, index.return = TRUE)$ix
 
-  if (is.matrix) {
+  if (is.matrix(block1)) {
     block1 <- block1[index.initial[rank.target], ]
   } else {
     block1 <- block1[index.initial[rank.target]]
