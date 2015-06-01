@@ -4,12 +4,14 @@
 \alias{blockra}
 \title{Block rearrangement algorithm with a hard convergence criterium}
 \usage{
-blockra(matrix, epsilon = 0.1)
+blockra(matrix, epsilon = 0.1, shuffle = TRUE)
 }
 \arguments{
 \item{matrix}{numeric matrix}
 
 \item{epsilon}{target variance of row sums is epsilon multiplied by the mean of the matrix variances}
+
+\item{shuffle}{randomly permute each column of the matrix before rearrangement}
 }
 \value{
 numeric matrix with a minimal row sum variance
