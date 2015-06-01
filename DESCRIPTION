@@ -1,8 +1,10 @@
 Package: blockra
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph)
+Title: Block Rearrangement Algorithm
+Version: 1.0
+Authors@R: c(person("Kris", "Boudt", email = "kris.boudt@vub.ac.be", role = "aut"),
+             person("Steven", "Vanduffel", email = "steven.vanduffel@vub.ac.be", role = "aut"),
+             person("Kristof", "Verbeken", email = "kristof.verbeken@vub.ac.be", role = c("aut", "cre")))
+Description: Block Rearrangement Algorithm
 Depends: R (>= 3.2.0)
 License: What license is it under?
 LazyData: true
