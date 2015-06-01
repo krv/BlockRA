@@ -19,7 +19,7 @@ rearrange <- function(block1, block2) {
   }
 
   if (is.matrix(block2)) {
-    rank.block2 <- rank(RowSums(block2), ties.method= "first")
+    rank.block2 <- rank(rowSums(block2), ties.method= "first")
   } else if (is.vector(block2)) {
     rank.block2 <- rank(block2, ties.method = "first")
   } else {
