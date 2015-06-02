@@ -24,4 +24,7 @@ blockra(matrix)
 blockra(matrix(1:5, 5, 3))
 blockra(matrix, epsilon = 0.001, shuffle = FALSE)
 }
+\seealso{
+The \code{\link{ra}} for the rearrangement algorithm
+}
 

@@ -24,4 +24,9 @@ ra(matrix)
 ra(matrix(1:5, 5, 3))
 ra(matrix, epsilon = 0.001, shuffle = FALSE)
 }
+\seealso{
+\code{\link{blockra}} for the block rearrangement algorithm
+
+\code{\link{brave}} for the block rearrangement variance equalizer
+}
 

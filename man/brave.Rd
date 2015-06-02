@@ -24,4 +24,9 @@ brave(matrix)
 brave(matrix(1:5, 5, 3))
 brave(matrix, epsilon = 0.001, shuffle = FALSE)
 }
+\seealso{
+\code{\link{ra}} for the rearrangement algorithm
+
+\code{\link{blockra}} for the block rearrangement algorithm
+}
 
