@@ -3,5 +3,6 @@
 export(blockra)
 export(brave)
 export(equalvar)
+export(ra)
 export(rearrange)
 export(rearrangepartition)
