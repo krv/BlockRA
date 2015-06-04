@@ -17,7 +17,12 @@ rearranged first block
 \description{
 Inversely sort a block based on the order of a bigger block
 }
-\examples{
-rearrange(block1, block2)
+\author{
+Kris Boudt, \email{kris.boudt@vub.ac.be}
+
+Steven Vanduffel, \email{steven.vanduffel@vub.ac.be}
+
+Kristof Verbeken, \email{kristof.verbeken@vub.ac.be}
 }
+\keyword{internal}
 

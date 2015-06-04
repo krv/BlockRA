@@ -4,10 +4,10 @@
 \alias{rearrangepartition}
 \title{Rearrange matrix based on binary partition vector}
 \usage{
-rearrangepartition(matrix, partition)
+rearrangepartition(X, partition)
 }
 \arguments{
-\item{matrix}{numeric matrix}
+\item{X}{numeric array or matrix}
 
 \item{partition}{binary partition vector with 1 representing block 1
 and 0 representing block 2}
@@ -18,8 +18,11 @@ numeric matrix with a minimal row sum variance
 \description{
 Rearrange matrix based on binary partition vector
 }
-\examples{
-rearrangepartition(matrix, partition)
-blockra(matrix(1:5, 5, 3), c(0, 1, 0))
+\author{
+Kris Boudt, \email{kris.boudt@vub.ac.be}
+
+Steven Vanduffel, \email{steven.vanduffel@vub.ac.be}
+
+Kristof Verbeken, \email{kristof.verbeken@vub.ac.be}
 }
 

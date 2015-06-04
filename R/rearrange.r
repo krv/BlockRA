@@ -2,10 +2,16 @@
 #'
 #' @param block1 the small block to be inversely rearranged
 #' @param block2 the large block
+#'
 #' @return rearranged first block
+#'
 #' @export
-#' @examples
-#' rearrange(block1, block2)
+#'
+#' @keywords internal
+#'
+#' @author Kris Boudt, \email{kris.boudt@@vub.ac.be}
+#' @author Steven Vanduffel, \email{steven.vanduffel@@vub.ac.be}
+#' @author Kristof Verbeken, \email{kristof.verbeken@@vub.ac.be}
 rearrange <- function(block1, block2) {
 
   if (is.matrix(block1)) {

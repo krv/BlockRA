@@ -4,10 +4,10 @@
 \alias{brave}
 \title{Block ReArrangement Variance Equalizer}
 \usage{
-brave(matrix, epsilon = 0.1, shuffle = TRUE)
+brave(X, epsilon = 0.1, shuffle = TRUE)
 }
 \arguments{
-\item{matrix}{numeric matrix}
+\item{X}{numeric array or matrix}
 
 \item{epsilon}{target variance of row sums is epsilon multiplied by the mean of the matrix variances}
 
@@ -19,10 +19,15 @@ numeric matrix with a minimal row sum variance
 \description{
 Block ReArrangement Variance Equalizer
 }
-\examples{
-brave(matrix)
-brave(matrix(1:5, 5, 3))
-brave(matrix, epsilon = 0.001, shuffle = FALSE)
+\author{
+Kris Boudt, \email{kris.boudt@vub.ac.be}
+
+Steven Vanduffel, \email{steven.vanduffel@vub.ac.be}
+
+Kristof Verbeken, \email{kristof.verbeken@vub.ac.be}
+}
+\references{
+\url{LINK TO RA PAPER}
 }
 \seealso{
 \code{\link{ra}} for the rearrangement algorithm

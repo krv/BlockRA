@@ -4,10 +4,10 @@
 \alias{ra}
 \title{Rearrangement Algorithm}
 \usage{
-ra(matrix, epsilon = 0.1, shuffle = TRUE)
+ra(X, epsilon = 0.1, shuffle = TRUE)
 }
 \arguments{
-\item{matrix}{numeric matrix}
+\item{X}{numeric array or matrix}
 
 \item{epsilon}{target variance of row sums is epsilon multiplied by the mean of the matrix variances}
 
@@ -17,12 +17,17 @@ ra(matrix, epsilon = 0.1, shuffle = TRUE)
 numeric matrix with a minimal row sum variance
 }
 \description{
-Rearrangement Algorithm
+Function which performs the traditional RA
 }
-\examples{
-ra(matrix)
-ra(matrix(1:5, 5, 3))
-ra(matrix, epsilon = 0.001, shuffle = FALSE)
+\author{
+Kris Boudt, \email{kris.boudt@vub.ac.be}
+
+Steven Vanduffel, \email{steven.vanduffel@vub.ac.be}
+
+Kristof Verbeken, \email{kristof.verbeken@vub.ac.be}
+}
+\references{
+\url{LINK TO RA PAPER}
 }
 \seealso{
 \code{\link{blockra}} for the block rearrangement algorithm

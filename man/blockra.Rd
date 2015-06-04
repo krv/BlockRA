@@ -2,12 +2,12 @@
 % Please edit documentation in R/blockra.r
 \name{blockra}
 \alias{blockra}
-\title{Block rearrangement algorithm with a hard convergence criterium}
+\title{Block rearrangement algorithm}
 \usage{
-blockra(matrix, epsilon = 0.1, shuffle = TRUE)
+blockra(X, epsilon = 0.1, shuffle = TRUE)
 }
 \arguments{
-\item{matrix}{numeric matrix}
+\item{X}{numeric array or matrix}
 
 \item{epsilon}{target variance of row sums is epsilon multiplied by the mean of the matrix variances}
 
@@ -17,12 +17,17 @@ blockra(matrix, epsilon = 0.1, shuffle = TRUE)
 numeric matrix with a minimal row sum variance
 }
 \description{
-Block rearrangement algorithm with a hard convergence criterium
+Function which performs the block ra of Bernard and McLeish
 }
-\examples{
-blockra(matrix)
-blockra(matrix(1:5, 5, 3))
-blockra(matrix, epsilon = 0.001, shuffle = FALSE)
+\author{
+Kris Boudt, \email{kris.boudt@vub.ac.be}
+
+Steven Vanduffel, \email{steven.vanduffel@vub.ac.be}
+
+Kristof Verbeken, \email{kristof.verbeken@vub.ac.be}
+}
+\references{
+\url{LINK TO RA PAPER}
 }
 \seealso{
 The \code{\link{ra}} for the rearrangement algorithm

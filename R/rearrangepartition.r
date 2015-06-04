@@ -1,15 +1,18 @@
 #' Rearrange matrix based on binary partition vector
 #'
-#' @param matrix numeric matrix
+#' @param X numeric array or matrix
 #' @param partition binary partition vector with 1 representing block 1
 #' and 0 representing block 2
+#'
 #' @return numeric matrix with a minimal row sum variance
+#'
 #' @export
-#' @examples
-#' rearrangepartition(matrix, partition)
-#' blockra(matrix(1:5, 5, 3), c(0, 1, 0))
-rearrangepartition <- function(matrix, partition) {
-  if (!is.matrix(matrix)) {
+#'
+#' @author Kris Boudt, \email{kris.boudt@@vub.ac.be}
+#' @author Steven Vanduffel, \email{steven.vanduffel@@vub.ac.be}
+#' @author Kristof Verbeken, \email{kristof.verbeken@@vub.ac.be}
+rearrangepartition <- function(X, partition) {
+  if (!is.matrix(X)) {
     stop("matrix argument is a numeric matrix")
   }
 
@@ -21,7 +24,7 @@ rearrangepartition <- function(matrix, partition) {
     stop("partition vector has elements that are not binary")
   }
 
-  if (length(partition) != ncol(matrix)) {
+  if (length(partition) != ncol(X)) {
     stop("Partition incompatible with matrix.")
   }
 
@@ -32,12 +35,12 @@ rearrangepartition <- function(matrix, partition) {
     partition[partition == 2] <- 0
   }
 
-  block1 <- matrix[, partition == 1]
-  block2 <- matrix[, partition == 0]
+  block1 <- X[, partition == 1]
+  block2 <- X[, partition == 0]
 
   # rearrange block 1
   block1.ra <- rearrange(block1, block2)
-  matrix[, partition == 1] <- block1.ra
+  X[, partition == 1] <- block1.ra
 
-  return(matrix)
+  return(X)
 }

@@ -1,37 +1,44 @@
 #' Rearrangement Algorithm
 #'
-#' @param matrix numeric matrix
+#' Function which performs the traditional RA
+#'
+#' @param X numeric array or matrix
 #' @param epsilon target variance of row sums is epsilon multiplied by the mean of the matrix variances
 #' @param shuffle randomly permute each column of the matrix before rearrangement
+#'
 #' @return numeric matrix with a minimal row sum variance
+#'
 #' @export
+#'
 #' @seealso \code{\link{blockra}} for the block rearrangement algorithm
 #' @seealso \code{\link{brave}} for the block rearrangement variance equalizer
-#' @examples
-#' ra(matrix)
-#' ra(matrix(1:5, 5, 3))
-#' ra(matrix, epsilon = 0.001, shuffle = FALSE)
-ra <- function(matrix, epsilon = 0.1, shuffle = TRUE) {
+#'
+#' @references \url{LINK TO RA PAPER}
+#'
+#' @author Kris Boudt, \email{kris.boudt@@vub.ac.be}
+#' @author Steven Vanduffel, \email{steven.vanduffel@@vub.ac.be}
+#' @author Kristof Verbeken, \email{kristof.verbeken@@vub.ac.be}
+ra <- function(X, epsilon = 0.1, shuffle = TRUE) {
   if (shuffle) {
-    matrix <- apply(matrix, 2, sample)
+    X <- apply(X, 2, sample)
   }
 
-  var.new   <- var(rowSums(matrix))
+  var.new   <- var(rowSums(X))
   var.old   <- 2 * var.new
-  target    <- epsilon * mean(apply(matrix, 2, var))
+  target    <- epsilon * mean(apply(X, 2, var))
 
   while ((var.new > target) && (var.new < var.old)) {
 
-    for (col in 1 : ncol(matrix)) {
-      current         <- sort(matrix[, col])
-      other.sums      <- rowSums(matrix[ , -col])
+    for (col in 1 : ncol(X)) {
+      current         <- sort(X[, col])
+      other.sums      <- rowSums(X[ , -col])
       other.sums.rank <- rank(-other.sums, ties.method = "random")
-      matrix[, col]   <- current[other.sums.rank]
+      X[, col]   <- current[other.sums.rank]
     }
 
     var.old <- var.new
-    var.new <- var(rowSums(matrix))
+    var.new <- var(rowSums(X))
   }
 
-  return(matrix)
+  return(X)
 }
