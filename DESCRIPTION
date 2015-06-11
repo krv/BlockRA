@@ -4,7 +4,7 @@ Version: 1.0
 Authors@R: c(person("Kris", "Boudt", email = "kris.boudt@vub.ac.be", role = "aut"),
              person("Steven", "Vanduffel", email = "steven.vanduffel@vub.ac.be", role = "aut"),
              person("Kristof", "Verbeken", email = "kristof.verbeken@vub.ac.be", role = c("aut", "cre")))
-Description: Block Rearrangement Algorithm
+Description: Block RA package containing multiple variants of the Rearrangement algorithm.
 Depends: R (>= 3.2.0)
-License: What license is it under?
+License: GPL-2
 LazyData: true
