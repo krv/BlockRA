@@ -11,7 +11,7 @@
 #' @author Kris Boudt, \email{kris.boudt@@vub.ac.be}
 #' @author Steven Vanduffel, \email{steven.vanduffel@@vub.ac.be}
 #' @author Kristof Verbeken, \email{kristof.verbeken@@vub.ac.be}
-rearrangepartition <- function(X, partition) {
+rearrangepartition <- function(X, partition, fix.first = TRUE) {
   if (!is.matrix(X)) {
     stop("matrix argument is a numeric matrix")
   }
@@ -28,8 +28,10 @@ rearrangepartition <- function(X, partition) {
     stop("Partition incompatible with matrix.")
   }
 
-  # make sure block 1 is the smallest block
-  if (sum(partition) > length(partition) / 2) {
+  # Either fix the order of the first partition
+  # OR make sure the first block is the largest
+  if ((fix.first && partition[1] == 1) ||
+      (!fix.first && sum(partition) > length(partition) / 2)) {
     partition[partition == 1] <- 2
     partition[partition == 0] <- 1
     partition[partition == 2] <- 0
@@ -40,6 +42,7 @@ rearrangepartition <- function(X, partition) {
 
   # rearrange block 1
   block1.ra <- rearrange(block1, block2)
+  print(partition)
   X[, partition == 1] <- block1.ra
 
   return(X)

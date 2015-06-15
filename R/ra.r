@@ -18,10 +18,8 @@
 #' @author Kris Boudt, \email{kris.boudt@@vub.ac.be}
 #' @author Steven Vanduffel, \email{steven.vanduffel@@vub.ac.be}
 #' @author Kristof Verbeken, \email{kristof.verbeken@@vub.ac.be}
-ra <- function(X, epsilon = 0.1, shuffle = TRUE) {
-  if (shuffle) {
-    X <- apply(X, 2, sample)
-  }
+ra <- function(X, epsilon = 0.1, shuffle = TRUE, fix.first = TRUE) {
+  if (shuffle) X <- shufflematrix(X, fix.first)
 
   var.new   <- var(rowSums(X))
   var.old   <- 2 * var.new

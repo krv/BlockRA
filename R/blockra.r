@@ -17,10 +17,8 @@
 #' @author Kris Boudt, \email{kris.boudt@@vub.ac.be}
 #' @author Steven Vanduffel, \email{steven.vanduffel@@vub.ac.be}
 #' @author Kristof Verbeken, \email{kristof.verbeken@@vub.ac.be}
-blockra <- function(X, epsilon = 0.1, shuffle = TRUE) {
-  if (shuffle) {
-    X <- X(matrix, 2, sample)
-  }
+blockra <- function(X, epsilon = 0.1, shuffle = TRUE, fix.first = TRUE) {
+  if (shuffle) X <- shufflematrix(X, fix.first)
 
   var.new   <- var(rowSums(X))
   var.old   <- 2 * var.new
@@ -29,7 +27,7 @@ blockra <- function(X, epsilon = 0.1, shuffle = TRUE) {
   while ((var.new > target) && (var.new < var.old)) {
 
     partition <- sample(0 : 1, ncol(X), replace = TRUE)
-    X         <- rearrangepartition(X, partition)
+    X         <- rearrangepartition(X, partition, fix.first)
     var.old   <- var.new
     var.new   <- var(rowSums(X))
   }
