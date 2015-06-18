@@ -8,6 +8,8 @@ shufflematrix(X, fix.first = TRUE)
 }
 \arguments{
 \item{X}{numeric array or matrix}
+
+\item{fix.first}{don't change the order of the first column}
 }
 \value{
 randomly permuted numeric matrix

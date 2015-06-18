@@ -11,6 +11,8 @@ rearrangepartition(X, partition, fix.first = TRUE)
 
 \item{partition}{binary partition vector with 1 representing block 1
 and 0 representing block 2}
+
+\item{fix.first}{don't change the order of the first column}
 }
 \value{
 numeric matrix with a minimal row sum variance

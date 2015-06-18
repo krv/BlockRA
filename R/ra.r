@@ -27,7 +27,7 @@ ra <- function(X, epsilon = 0.1, shuffle = TRUE, fix.first = TRUE, obj = var) {
   obj.old    <- 2 * obj.new
   obj.target <- epsilon * mean(apply(X, 2, obj))
 
-  while ((obj.new > target) && (obj.new < obj.old)) {
+  while ((obj.new > obj.target) && (obj.new < obj.old)) {
 
     for (col in 1 : ncol(X)) {
       current         <- sort(X[, col])
