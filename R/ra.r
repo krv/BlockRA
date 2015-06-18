@@ -5,6 +5,7 @@
 #' @param X numeric array or matrix
 #' @param epsilon target variance of row sums is epsilon multiplied by the mean of the matrix variances
 #' @param shuffle randomly permute each column of the matrix before rearrangement
+#' @param fix.first don't change the order of the first column
 #' @param obj objective function that is minimized, default is variance
 #'
 #' @return numeric matrix with a minimal row sum variance
