@@ -4,7 +4,7 @@
 \alias{shufflematrix}
 \title{Shuffle matrix}
 \usage{
-shufflematrix(X)
+shufflematrix(X, fix.first = TRUE)
 }
 \arguments{
 \item{X}{numeric array or matrix}

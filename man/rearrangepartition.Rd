@@ -4,7 +4,7 @@
 \alias{rearrangepartition}
 \title{Rearrange matrix based on binary partition vector}
 \usage{
-rearrangepartition(X, partition)
+rearrangepartition(X, partition, fix.first = TRUE)
 }
 \arguments{
 \item{X}{numeric array or matrix}

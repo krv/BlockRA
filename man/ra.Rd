@@ -4,7 +4,7 @@
 \alias{ra}
 \title{Rearrangement Algorithm}
 \usage{
-ra(X, epsilon = 0.1, shuffle = TRUE)
+ra(X, epsilon = 0.1, shuffle = TRUE, fix.first = TRUE, obj = var)
 }
 \arguments{
 \item{X}{numeric array or matrix}
@@ -12,6 +12,8 @@ ra(X, epsilon = 0.1, shuffle = TRUE)
 \item{epsilon}{target variance of row sums is epsilon multiplied by the mean of the matrix variances}
 
 \item{shuffle}{randomly permute each column of the matrix before rearrangement}
+
+\item{obj}{objective function that is minimized, default is variance}
 }
 \value{
 numeric matrix with a minimal row sum variance

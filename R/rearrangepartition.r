@@ -42,7 +42,6 @@ rearrangepartition <- function(X, partition, fix.first = TRUE) {
 
   # rearrange block 1
   block1.ra <- rearrange(block1, block2)
-  print(partition)
   X[, partition == 1] <- block1.ra
 
   return(X)
