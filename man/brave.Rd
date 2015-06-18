@@ -13,6 +13,8 @@ brave(X, epsilon = 0.1, shuffle = TRUE, fix.first = TRUE, obj = var)
 
 \item{shuffle}{randomly permute each column of the matrix before rearrangement}
 
+\item{fix.first}{don't change the order of the first column}
+
 \item{obj}{objective function that is minimized, default is variance}
 }
 \value{
