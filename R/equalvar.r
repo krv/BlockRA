@@ -29,7 +29,7 @@
 equalvar <- function(X) {
   swept       <- X - tcrossprod(rep(1, nrow(X)), colMeans(X))
   covariances <- crossprod(swept, rowSums(swept)) / nrow(swept - 1)
-  covariances <- sort(covariances, index.return = TRUE)
+  covariances <- sort(covariances, index.return = TRUE, decreasing = TRUE)
   partition   <- rep(0, length(covariances$x))
 
   block1 <- 0
