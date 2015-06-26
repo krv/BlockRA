@@ -4,7 +4,8 @@
 \alias{bra}
 \title{Block rearrangement algorithm}
 \usage{
-bra(X, epsilon = 0.1, shuffle = TRUE, fix.first = TRUE, obj = var)
+bra(X, epsilon = 0.1, shuffle = TRUE, fix.first = TRUE, obj = var,
+  seed = 1)
 }
 \arguments{
 \item{X}{numeric array or matrix}
@@ -16,6 +17,8 @@ bra(X, epsilon = 0.1, shuffle = TRUE, fix.first = TRUE, obj = var)
 \item{fix.first}{don't change the order of the first column}
 
 \item{obj}{objective function that is minimized, default is variance}
+
+\item{seed}{random seed}
 }
 \value{
 numeric matrix with a minimal row sum variance

@@ -28,16 +28,16 @@
 #' @author Kristof Verbeken, \email{kristof.verbeken@@vub.ac.be}
 equalvar <- function(X) {
   swept       <- X - tcrossprod(rep(1, nrow(X)), colMeans(X))
-  covariances <- crossprod(swept, rowSums(swept)) / nrow(swept - 1)
-  covariances <- sort(abs(covariances), index.return = TRUE, decreasing = TRUE)
-  partition   <- rep(0, length(covariances$x))
+  covars <- crossprod(swept, rowSums(swept)) / nrow(swept - 1)
+  covars <- sort(covars, index.return = TRUE, decreasing = TRUE)
+  partition   <- rep(0, length(covars$x))
 
   block1 <- 0
   block2 <- 0
 
-  for (element in 1 : length(covariances$x)) {
-    value <- covariances$x[element]
-    index <- covariances$ix[element]
+  for (element in 1 : length(covars$x)) {
+    value <- covars$x[element]
+    index <- covars$ix[element]
 
     if ((value > 0 && block1 < block2) ||
         (value < 0 && block1 > block2)) {

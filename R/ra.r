@@ -7,6 +7,7 @@
 #' @param shuffle randomly permute each column of the matrix before rearrangement
 #' @param fix.first don't change the order of the first column
 #' @param obj objective function that is minimized, default is variance
+#' @param seed random seed
 #'
 #' @return numeric matrix with a minimal row sum variance
 #'
@@ -20,7 +21,8 @@
 #' @author Kris Boudt, \email{kris.boudt@@vub.ac.be}
 #' @author Steven Vanduffel, \email{steven.vanduffel@@vub.ac.be}
 #' @author Kristof Verbeken, \email{kristof.verbeken@@vub.ac.be}
-ra <- function(X, epsilon = 0.1, shuffle = TRUE, fix.first = TRUE, obj = var) {
+ra <- function(X, epsilon = 0.1, shuffle = TRUE, fix.first = TRUE, obj = var, seed = 1) {
+  set.seed(1)
   if (shuffle) X <- shufflematrix(X, fix.first)
 
   obj.new    <- obj(rowSums(X))
