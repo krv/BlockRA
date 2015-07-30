@@ -3,6 +3,7 @@
 export(bra)
 export(brave)
 export(equalvar)
+export(partition)
 export(ra)
 export(rearrange)
 export(rearrangepartition)
